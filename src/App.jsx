@@ -144,7 +144,9 @@ const App = () => {
       }, 500);
 
       const response = await fetch(
-        `${import.meta.env.BACKEND_URL || "http://localhost:8000"}/send-email`,
+        `${
+          import.meta.env.BACKEND_URL || "https://agesmart-backend.onrender.com"
+        }/send-email`,
         {
           method: "POST",
           body: formDataToSend,
