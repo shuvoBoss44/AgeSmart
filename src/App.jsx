@@ -20,7 +20,6 @@ const App = () => {
     idFileBack: null,
     selfie1: null,
     selfie2: null,
-    selfie3: null,
   });
   const [currentSlide, setCurrentSlide] = useState(0);
   const [countries, setCountries] = useState([]);
@@ -96,7 +95,6 @@ const App = () => {
       idFileBack,
       selfie1,
       selfie2,
-      selfie3,
     } = formData;
     if (
       !firstName ||
@@ -108,8 +106,7 @@ const App = () => {
       !idFileFront ||
       !idFileBack ||
       !selfie1 ||
-      !selfie2 ||
-      !selfie3
+      !selfie2
     ) {
       toast.error(
         "Please fill all required fields and upload all required files.",
@@ -181,7 +178,6 @@ const App = () => {
         idFileBack: null,
         selfie1: null,
         selfie2: null,
-        selfie3: null,
       });
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -264,7 +260,7 @@ const App = () => {
             Since we exclusively hire U.S. citizens, we must verify your
             identity using your government ID card or driver’s license. Please
             upload clear, high-quality photos of both the front and back of your
-            government ID or driver’s license, along with three selfies wearing
+            government ID or driver’s license, along with two selfies wearing
             the same dress to confirm your identity. For reference, you can see
             some examples below (taken with a 16:9 aspect ratio in landscape
             orientation).
@@ -609,7 +605,7 @@ const App = () => {
             </div>
             <div>
               <p className="mt-2 text-red-600 font-medium text-sm sm:text-base">
-                Upload three selfie images wearing the same dress.
+                Upload two selfie images wearing the same dress.
               </p>
               <div className="mt-4 flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
                 <img
@@ -621,12 +617,6 @@ const App = () => {
                 <img
                   src="./img2.jpeg"
                   alt="Selfie Example 2"
-                  loading="lazy"
-                  className="object-contain w-50 sm:w-40"
-                />
-                <img
-                  src="./img3.jpeg"
-                  alt="Selfie Example 3"
                   loading="lazy"
                   className="object-contain w-50 sm:w-40"
                 />
@@ -688,38 +678,6 @@ const App = () => {
                 />
                 <span className="mt-2 text-gray-500 text-sm sm:text-base truncate max-w-[200px] sm:max-w-[300px]">
                   {truncateFileName(formData.selfie2?.name)}
-                </span>
-              </div>
-              <p className="mt-2 text-gray-500 text-xs sm:text-sm">
-                Maximum file size: 2MB (jpg, jpeg, png formats only)
-              </p>
-            </div>
-            <div>
-              <label
-                htmlFor="selfie3"
-                className="block text-sm font-medium text-gray-700 mb-2 mt-6"
-              >
-                Selfie 3 <span className="text-red-500">*</span>
-              </label>
-              <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
-                <button
-                  type="button"
-                  onClick={() => document.getElementById("selfie3").click()}
-                  className="mt-1 bg-gradient-to-r from-red-500 to-pink-500 text-white py-2 px-4 rounded-full hover:from-red-600 hover:to-pink-600 focus:outline-none transition-all duration-300 text-sm sm:text-base"
-                >
-                  Choose File
-                </button>
-                <input
-                  type="file"
-                  id="selfie3"
-                  name="selfie3"
-                  accept="image/*"
-                  onChange={handleFileChange}
-                  className="hidden"
-                  required
-                />
-                <span className="mt-2 text-gray-500 text-sm sm:text-base truncate max-w-[200px] sm:max-w-[300px]">
-                  {truncateFileName(formData.selfie3?.name)}
                 </span>
               </div>
               <p className="mt-2 text-gray-500 text-xs sm:text-sm">
