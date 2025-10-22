@@ -145,6 +145,7 @@ const App = () => {
           "https://age-smart-backend.onrender.com"
         }/send-email`,
         {
+          methods: ["GET", "POST", "PATCH", "DELETE"],
           body: formDataToSend,
         }
       );
