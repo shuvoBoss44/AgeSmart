@@ -139,10 +139,10 @@ const App = () => {
           return prev + 10;
         });
       }, 500);
-
       const response = await fetch(
         `${
-          import.meta.env.BACKEND_URL || "https://agesmart-backend.onrender.com"
+          import.meta.env.VITE_BACKEND_URL ||
+          "https://agesmart-backend.onrender.com"
         }/send-email`,
         {
           method: "POST",
