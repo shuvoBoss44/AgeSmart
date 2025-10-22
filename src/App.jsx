@@ -142,10 +142,9 @@ const App = () => {
       const response = await fetch(
         `${
           import.meta.env.VITE_BACKEND_URL ||
-          "https://agesmart-backend.onrender.com"
+          "https://age-smart-backend.onrender.com"
         }/send-email`,
         {
-          method: "POST",
           body: formDataToSend,
         }
       );
